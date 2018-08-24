@@ -12,6 +12,7 @@ const data = new Schema({
           y: Number,
           x: Number,
       },
+      camera: String,
       confidence: Number,
       label: String,
   },
