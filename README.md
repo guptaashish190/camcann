@@ -19,6 +19,7 @@ Routes-
           "CAMERA": "String",
           "CONFIDENCE": "Number",
           "IMAGELABEL": "String",
+          "IMAGEURL": "String",
           "IMAGECOORDINATES": {
             "x1": "Number",
             "y1": "Number",
