@@ -6,7 +6,7 @@ const routes = require("./routes/index");
 const app = express();
 const mongoose = require("mongoose");
 const keys = require("./keys");
-
+require('dotenv/config');
 const PORT = process.env.PORT || 3005;
 
 app.use(morgan("dev"));
@@ -14,12 +14,15 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-mongoose.connect(`mongodb://${keys.mongoDB.user}:${keys.mongoDB.password}@ds159997.mlab.com:59997/camcann`, (err) => {
-    if(err){
-        console.log(err);
-    }
-    console.log("Successfully connected to the database!");
-});
+if(0 && process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD){
+    mongoose.connect(`mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@ds159997.mlab.com:59997/camcann`, (err) => {
+        err ? console.log(err) : console.log("Successfully connected to the database!");
+    });
+}else{
+    mongoose.connect(`mongodb://${keys.mongoDB.user}:${keys.mongoDB.password}@ds159997.mlab.com:59997/camcann`, (err) => {
+        err ? console.log(err) : console.log("Successfully connected to the database!");
+    });
+}
 
 app.use("/camcann",routes);
 
