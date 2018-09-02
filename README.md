@@ -15,19 +15,16 @@ Routes-
      request body structure
      ```json
          {
-         "data": {
-              "topleft": {
-                  "y": "Number",
-                  "x": "Number"
-              },
-              "bottomRight": {
-                  "y": "Number",
-                  "x": "Number",
-              },
-              "camera": "String",
-              "confidence": "Number",
-              "label": "String",
-          },
-          "time": "String",
-        }
+          "TIME": "String",
+          "CAMERA": "String",
+          "CONFIDENCE": "Number",
+          "IMAGELABEL": "String",
+          "IMAGECOORDINATES": {
+            "x1": "Number",
+            "y1": "Number",
+            "x2": "Number",
+            "y2": "Number",
+            }
+         
+         }
         ```
