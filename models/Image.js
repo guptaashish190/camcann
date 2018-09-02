@@ -7,7 +7,7 @@ const ImageSchema = new Schema({
       CAMERA: String,
       CONFIDENCE: Number,
       IMAGELABEL: String,
-      IMAGE: String,
+      IMAGEURL: String,
       IMAGECOORDINATES: {
           x1: Number,
           y1: Number,
