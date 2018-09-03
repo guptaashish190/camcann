@@ -17,10 +17,6 @@ if(0 && process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD){
     mongoose.connect(`mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@ds159997.mlab.com:59997/camcann`, (err) => {
         err ? console.log(err) : console.log("Successfully connected to the database!");
     });
-}else{
-    mongoose.connect(`mongodb://${keys.mongoDB.user}:${keys.mongoDB.password}@ds159997.mlab.com:59997/camcann`, (err) => {
-        err ? console.log(err) : console.log("Successfully connected to the database!");
-    });
 }
 
 app.use("/camcann",routes);
