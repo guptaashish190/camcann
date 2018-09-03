@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/submitImageData", (req, res) => {
-    const ImageInfo = req.body.ImageInfo;
+    const { ImageInfo } = req.body;
     new Image(ImageInfo).save((err) => {
         if(err){
             res.json({
