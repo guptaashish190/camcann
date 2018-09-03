@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const routes = require("./routes/index");
 const app = express();
 const mongoose = require("mongoose");
-const keys = require("./keys");
 require('dotenv/config');
 const PORT = process.env.PORT || 3005;
 
