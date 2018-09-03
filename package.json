@@ -16,7 +16,7 @@
     "morgan": "^1.9.0"
   },
   "engines": {
-    "node": "4.1.1"
+    "node": "v8.9.4"
   },
   "devDependencies": {
     "dotenv": "^6.0.0"
