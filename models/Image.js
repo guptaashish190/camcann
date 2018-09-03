@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
  
 const ImageSchema = new Schema({
-      TIME: String,
-      CAMERA: String,
-      CONFIDENCE: Number,
-      IMAGELABEL: String,
-      IMAGEURL: String,
-      IMAGECOORDINATES: {
+      time: String,
+      camera: String,
+      confidence: Number,
+      imagelabel: String,
+      url: String,
+      coordinates: {
           x1: Number,
           y1: Number,
           x2: Number,
