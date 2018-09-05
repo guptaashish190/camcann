@@ -31,6 +31,29 @@ router.get("/findlabel", (req, res) => {
     });
 });
 
+router.get('/getFromTimeRange', (req, res) => {
+    const { startTime, endTime, label, camera } = req.query;
+
+    const startTime = utils.extractTimeFromString(startTime);
+    const endTime = utils.extractTimeFromString(endTime);
+
+    const filteredImages = [];
+    Image.find({ camera, label }).then((images) => {
+        images.forEach((image) => {
+            const imageTime = utils.extractTimeFromString(image.time);
+            if (imageTime <= endTime && imageTime >= startTime) {
+                filteredImages.push(image);
+            }
+        });
+    });
+
+    res.send({
+        count: filteredImages.length,
+        images: filteredImages
+    });
+
+});
+
 router.get('/findjsonconfidence', (req, res) => {
     const { camera, confidence, label } = req.query;
 
