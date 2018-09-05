@@ -48,3 +48,22 @@ Routes-
             "count": "Image Count(Number)"
             }
         ```
+      5. url: "/camcann/get/getFromTimeRange" <br>
+          type: GET<br>
+          use: Get the all the images between a time range of a particular camera and label;
+          request query structure
+          ```json
+           {
+            "camera": "String",
+            "label": "String (in minutes)",
+            "startTime": "String (format strict('YYYY-MM-DD HH:MM:SS')  24HR FORMAT)",
+            "endTime": "String Same Format"
+           }
+          ```
+          response structure 
+          ```json
+           {
+              "images": "Image Objects",
+              "count": "Image Count(Number)"
+              }
+          ```
