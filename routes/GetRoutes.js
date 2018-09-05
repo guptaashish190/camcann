@@ -14,11 +14,11 @@ router.get("/findlabel", (req, res) => {
     const currentDummyTime = utils.extractTimeFromString("2018-09-02 21:15:33");
     Image.find(queryObj).then((images, err) => {
         const filteredImages = [];
-        
+
         images.forEach(image => {
             const imageTime = utils.extractTimeFromString(image.time);
             const subtractedTime = utils.subtractTimefromTime(Number(lowtime), currentDummyTime);
-            if(imageTime <= currentDummyTime && imageTime >= subtractedTime){
+            if (imageTime <= currentDummyTime && imageTime >= subtractedTime) {
                 filteredImages.push(image);
             }
         });
@@ -65,9 +65,9 @@ router.get("/findlastfivetotwenty", (req, res) => {
             5: [],
             10: [],
             15: [],
-            20:[]
+            20: []
         };
-        
+
         images.forEach(image => {
             const imageTime = utils.extractTimeFromString(image.time);
 
@@ -76,27 +76,27 @@ router.get("/findlastfivetotwenty", (req, res) => {
 
             console.log(imageTime, subtractedTime);
 
-            if(imageTime <= currentDummyTime && imageTime >= subtractedTime){
-                filteredImages[5].push({url: image.url, confidence: image.confidence});
+            if (imageTime <= currentDummyTime && imageTime >= subtractedTime) {
+                filteredImages[5].push({ url: image.url, confidence: image.confidence });
             }
 
-            
+
             // last 10 mins
             subtractedTime = utils.subtractTimefromTime(10, currentDummyTime);
-            if(imageTime <= currentDummyTime && imageTime >= subtractedTime){
-                filteredImages[10].push({url: image.url, confidence: image.confidence});
+            if (imageTime <= currentDummyTime && imageTime >= subtractedTime) {
+                filteredImages[10].push({ url: image.url, confidence: image.confidence });
             }
-            
+
             // last 15 mins
             subtractedTime = utils.subtractTimefromTime(15, currentDummyTime);
-            if(imageTime <= currentDummyTime && imageTime >= subtractedTime){
-                filteredImages[15].push({url: image.url, confidence: image.confidence});
+            if (imageTime <= currentDummyTime && imageTime >= subtractedTime) {
+                filteredImages[15].push({ url: image.url, confidence: image.confidence });
             }
-            
+
             // last 20 mins
             subtractedTime = utils.subtractTimefromTime(20, currentDummyTime);
-            if(imageTime <= currentDummyTime && imageTime >= subtractedTime){
-                filteredImages[20].push({url: image.url, confidence: image.confidence});
+            if (imageTime <= currentDummyTime && imageTime >= subtractedTime) {
+                filteredImages[20].push({ url: image.url, confidence: image.confidence });
             }
         });
         res.send({

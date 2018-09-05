@@ -9,12 +9,12 @@ router.get("/", (req, res) => {
 router.post("/submitImageData", (req, res) => {
     const { ImageInfo } = req.body;
     new Image(ImageInfo).save((err) => {
-        if(err){
+        if (err) {
             res.json({
                 status: "failed",
                 error: err,
             });
-        }else{
+        } else {
             res.json({
                 status: "success",
                 error: null,

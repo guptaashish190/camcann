@@ -2,7 +2,7 @@ module.exports = {
     checkTimeBetweenBracket: (time1, time2, time) => {
 
     },
-    subtractTimefromTime:  (time, subtractFromTime) => {
+    subtractTimefromTime: (time, subtractFromTime) => {
         // Time Format 
         // {
         //     date: [year, month, day],
@@ -11,11 +11,11 @@ module.exports = {
         const endTime = new Date(subtractFromTime);
         const duration = time;
         endTime.setMinutes(endTime.getMinutes() - duration);
-        return(endTime);
+        return (endTime);
 
     },
     extractTimeFromString: (timeString) => {
-        const [ date, time ] = timeString.split(' ');
+        const [date, time] = timeString.split(' ');
         const [year, month, day] = date.split('-');
         const [hours, minutes, seconds] = time.split(':');
 
@@ -23,6 +23,6 @@ module.exports = {
     },
 
     getTimeStringForCheck: (date) => {
-        return(`${date.getHours()},${date.getMinutes()},${date.getSeconds()}`);
-    } 
+        return (`${date.getHours()},${date.getMinutes()},${date.getSeconds()}`);
+    }
 }
