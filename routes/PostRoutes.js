@@ -7,7 +7,11 @@ router.get("/", (req, res) => {
 });
 
 router.post("/submitImageData", (req, res) => {
-    const { ImageInfo } = req.body;
+    const { time, camera, confidence, label, url, coordinates } = req.body;
+    const ImageInfo = {
+        time, camera, confidence, label, url, coordinates
+    }
+    console.log(ImageInfo);
     new Image(ImageInfo).save((err) => {
         if (err) {
             res.json({
