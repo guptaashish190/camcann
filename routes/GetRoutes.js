@@ -34,8 +34,8 @@ router.get("/findlabel", (req, res) => {
 router.get('/getFromTimeRange', (req, res) => {
     const { startTime, endTime, label, camera } = req.query;
 
-    const startTime = utils.extractTimeFromString(startTime);
-    const endTime = utils.extractTimeFromString(endTime);
+    startTime = utils.extractTimeFromString(startTime);
+    endTime = utils.extractTimeFromString(endTime);
 
     const filteredImages = [];
     Image.find({ camera, label }).then((images) => {
@@ -86,8 +86,6 @@ router.get("/findlastfivetotwenty", (req, res) => {
     } else {
         currentTime = utils.extractTimeFromString("2018-09-02 21:30:33");
     }
-
-    const currentTime = utils.extractTimeFromString("2018-09-02 21:30:33");
     Image.find(queryObj).then((images) => {
         const filteredImages = {
             5: [],
