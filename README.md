@@ -1,6 +1,8 @@
 # CAMCANN
 CCTV VIDEO ANALYSIS
 
+(Date Format Used : YYYY-MM-DD HH:MM:SS.mm)
+
 Routes-
   1. "/"<br>
     type: get<br>
@@ -20,6 +22,7 @@ Routes-
           "confidence": "Number",
           "label": "String",
           "url": "String",
+          "number_read": "String",
           "coordinates": {
             "x1": "Number",
             "y1": "Number",
@@ -37,7 +40,7 @@ Routes-
      {
       "camera": "String",
       "label": "String (in minutes)",
-      "lowTime": "String (format strict('YYYY-MM-DD HH:MM:SS')  24HR FORMAT)",
+      "lowTime": "String Date",
       "currentTime": "String Same Format"
      }
     ```
@@ -56,8 +59,8 @@ Routes-
        {
         "camera": "String",
         "label": "String (in minutes)",
-        "startTime": "String (format strict('YYYY-MM-DD HH:MM:SS')  24HR FORMAT)",
-        "endTime": "String Same Format"
+        "startTime": "String Date",
+        "endTime": "String Date"
        }
       ```
       response structure 
