@@ -19,6 +19,8 @@ module.exports = {
         const [year, month, day] = date.split('-');
         const [hours, minutes, seconds] = time.split(':');
 
+        seconds = seconds.split('.')[0];
+
         return (new Date(Number(year), Number(month), Number(day), Number(hours), Number(minutes), Number(seconds), 0));
     },
 

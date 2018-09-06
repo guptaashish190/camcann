@@ -9,6 +9,7 @@ const ImageSchema = new Schema(
         confidence: Number,
         label: String,
         url: String,
+        number_read: String,
         coordinates: {
             x1: Number,
             x2: Number,
