@@ -12,7 +12,7 @@ router.post("/submitImageData", (req, res) => {
         time, camera, confidence, label, url, coordinates
     }
     console.log(ImageInfo);
-    new Image(ImageInfo).save((err) => {
+    new Image(ImageInfo).save((err, resp) => {
         if (err) {
             res.json({
                 status: "failed",
@@ -20,8 +20,8 @@ router.post("/submitImageData", (req, res) => {
             });
         } else {
             res.json({
-                status: "success",
-                error: null,
+                status: resp,
+                error: err,
             });
         }
     });

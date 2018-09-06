@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 if (process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD) {
-    mongoose.connect(`mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@ds159997.mlab.com:59997/camcann`, (err) => {
+    mongoose.connect(`mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@ds245132.mlab.com:45132/camcann`, (err) => {
         err ? console.log(err) : console.log("Successfully connected to the database!");
     });
 }
