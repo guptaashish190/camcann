@@ -40,7 +40,7 @@ Routes-
      {
       "camera": "String",
       "label": "String (in minutes)",
-      "lowTime": "String Date",
+      "lowtime": "String Date",
       "currentTime": "String Same Format"
      }
     ```
@@ -58,7 +58,7 @@ Routes-
       ```json
        {
         "camera": "String",
-        "label": "String (in minutes)",
+        "label": "String",
         "startTime": "String Date",
         "endTime": "String Date"
        }
@@ -77,7 +77,7 @@ Routes-
       ```json
        {
         "camera": "String",
-        "label": "String (in minutes)",
+        "label": "String",
         "confidence": "Number"
        }
       ```
@@ -95,8 +95,8 @@ Routes-
       ```json
        {
         "camera": "String",
-        "label": "String (in minutes)",
-        "currentTime": "Time Format specified above"
+        "label": "String",
+        "currentTime": "String Date"
        }
       ```
       response structure 
